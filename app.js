@@ -7,16 +7,8 @@ const { engine } = require('express-handlebars');
 
 const app = express();
 
-app.engine(
-    'hbs',
-    // extname: Specifies the file extension for Handlebars templates (e.g., .hbs instead of default .handlebars)
-    engine({
-        layoutsDir: 'views/layouts/',
-        defaultLayout: 'main-layout',
-        extname: 'hbs'
-    })
-);
-app.set('view engine', 'hbs');
+// Set EJS as the template engine for rendering dynamic HTML views
+app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const adminData = require('./routes/admin');
